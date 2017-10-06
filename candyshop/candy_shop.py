@@ -17,6 +17,28 @@
 # The CandyShop should be represented as string in this format:
 # "Inventory: 3 candies, 2 lollipops, Income: 100, Sugar: 400gr"
 
+
+class CandyShop():
+    def __init__(self, sugar_amount):
+        self.sugar_amount = sugar_amount
+        self.lollipop_sugar_amount = 5
+        self.lollipop_price = 10
+        self.candy_sugar_amount = 10
+        self.cany_price = 20
+
+
+    def create_sweets(self, sweet):
+        pass
+
+    def raise_prices(self, percentage):
+        self.lollipop_price = self.lollipop_price + (self.lollipop_price * percentage / 100)
+        
+
+
+
+
+
+
 candy_shop = CandyShop(300)
 candy_shop.create_sweets("candy")
 candy_shop.create_sweets("candy")
@@ -38,3 +60,4 @@ candy_shop.buy_sugar(300)
 print(candy_shop)
 # Should print out:
 # "Invetory: 1 candies, 1 lollipops, Income:5, Sugar: 315gr"
+
