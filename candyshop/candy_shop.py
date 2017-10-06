@@ -53,7 +53,7 @@ class CandyShop():
         self.sugar_amount += bought_sugar_amount
 
     def __repr__(self):
-        return "Inventory: " + " candies, " + " lollipops, " + "Income: " + str(self.income) + ", Sugar: " + str(self.sugar_amount) + "gr"
+        return "Inventory: " + str(self.storage.count("candy")) + " candies, " + str(self.storage.count("lollipop")) + " lollipops, " + "Income: " + str(self.income) + ", Sugar: " + str(self.sugar_amount) + "gr"
 
 
 
