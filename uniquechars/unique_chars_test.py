@@ -4,15 +4,14 @@ import unique_chars
 
 class Alltest(unittest.TestCase):
 
-    def test_unique_characters(self):
-        self.assertEqual(unique_chars.unique_characters("banagram"), ['b', 'a', 'n', 'g', 'r', 'm'])
+    def test_unique_chars(self):
+        self.assertEqual(unique_chars.unique_characters("baaaanagram"), ['b', 'a', 'n', 'g', 'r', 'm'])
     
-    def test_not_unique_characters(self):
-        self.assertNotEquals(unique_chars.unique_characters("banagram"), ['a', 'n', 'g', 'r', 'm'])
+    def test_not_enought_chars(self):
+        self.assertNotEquals(unique_chars.unique_characters("banaagram"), ['a', 'n', 'g', 'r', 'm'])
 
-    # def test_if(self):
-    #     self.assertNotEquals(unique_chars.unique_characters(2), )
-
+    def test_upper_or_lower(self):
+        self.assertNotEquals(unique_chars.unique_characters("baaaanagram"), ['B', 'A', 'N', 'G', 'R', 'M'])
 
 if __name__ == '__main__':
     unittest.main()

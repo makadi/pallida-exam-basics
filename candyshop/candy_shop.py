@@ -62,7 +62,7 @@ candy_shop.create_sweets("candy")
 candy_shop.create_sweets("candy")
 candy_shop.create_sweets("lollipop")
 candy_shop.create_sweets("lollipop")
-print(candy_shop    )
+print(candy_shop)
 # Should print out:
 # Invetory: 2 candies, 2 lollipops, Income: 0, Sugar: 270gr
 candy_shop.sell("candy", 1)
