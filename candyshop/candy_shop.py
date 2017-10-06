@@ -42,10 +42,10 @@ class CandyShop():
     def sell(self, sweet, number_of_sweets):
         if sweet is str("lollipop"):
             self.storage.remove("lollipop")
-            self.income += 10 * number_of_sweets
+            self.income += self.lollipop_price * number_of_sweets
         if sweet is str("candy"):
             self.storage.remove("candy")
-            self.income += 20 * number_of_sweets
+            self.income += self.candy_price * number_of_sweets
 
     def buy_sugar(self, bought_sugar_amount):
         self.sugar_price = bought_sugar_amount / 10

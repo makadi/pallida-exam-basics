@@ -32,8 +32,10 @@ The application is accepted if:
 
 ###  What is the difference between a function and a method? [2p]
 #### Your answer:
-[add your answer here]
+
+Function and method is almost the same, we call the functions as "Methods" in object-oriented programming.
 
 ### What is the constructor? When it is used? [2p]
 #### Your answer:
-[add your answer here]
+
+In Python, constructor is a special method of a class that initializes an object of that type.
