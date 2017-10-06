@@ -24,16 +24,33 @@ class CandyShop():
         self.lollipop_sugar_amount = 5
         self.lollipop_price = 10
         self.candy_sugar_amount = 10
-        self.cany_price = 20
+        self.candy_price = 20
+        self.income = 0
+        self.storage = []
 
 
     def create_sweets(self, sweet):
-        pass
+        if sweet is "lollipop":
+            self.sugar_amount = self.sugar_amount - self.lollipop_sugar_amount
+        if sweet is "candy":
+            self.sugar_amount = self.sugar_amount - self.candy_sugar_amount
+        self.storage.append(sweet)
+
 
     def raise_prices(self, percentage):
         self.lollipop_price = self.lollipop_price + (self.lollipop_price * percentage / 100)
+        self.candy_price = self.candy_price + (self.candy_price * percentage / 100)
         
 
+    def sell(self, sweet, number_of_sweets):
+        if sweet is "lollipop":
+            self.storage.remove("lollipop")
+            self.income += 10
+        if sweet is "candy":
+            self.storage.remove("candy")
+            self.income += 20
+            
+        
 
 
 
@@ -48,7 +65,7 @@ print(candy_shop)
 # Should print out:
 # Invetory: 2 candies, 2 lollipops, Income: 0, Sugar: 270gr
 candy_shop.sell("candy", 1)
-print(candy_shop
+print(candy_shop)
 # Should print out:
 # "Invetory: 1 candies, 2 lollipops, Income:20, Sugar: 285gr"
 candy_shop.raise_prices(5)
