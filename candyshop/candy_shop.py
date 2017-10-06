@@ -28,7 +28,6 @@ class CandyShop():
         self.income = 0
         self.storage = []
 
-
     def create_sweets(self, sweet):
         if sweet is "lollipop":
             self.sugar_amount = self.sugar_amount - self.lollipop_sugar_amount
@@ -36,23 +35,25 @@ class CandyShop():
             self.sugar_amount = self.sugar_amount - self.candy_sugar_amount
         self.storage.append(sweet)
 
-
     def raise_prices(self, percentage):
-        self.lollipop_price = self.lollipop_price + (self.lollipop_price * percentage / 100)
-        self.candy_price = self.candy_price + (self.candy_price * percentage / 100)
-        
+        self.lollipop_price += (self.lollipop_price * percentage / 100)
+        self.candy_price += (self.candy_price * percentage / 100)
 
     def sell(self, sweet, number_of_sweets):
-        if sweet is "lollipop":
+        if sweet is str("lollipop"):
             self.storage.remove("lollipop")
-            self.income += 10
-        if sweet is "candy":
+            self.income += 10 * number_of_sweets
+        if sweet is str("candy"):
             self.storage.remove("candy")
-            self.income += 20
-            
-        
+            self.income += 20 * number_of_sweets
 
+    def buy_sugar(self, bought_sugar_amount):
+        self.sugar_price = bought_sugar_amount / 10
+        self.income -= self.sugar_price
+        self.sugar_amount += bought_sugar_amount
 
+    def __repr__(self):
+        return "Inventory: " + " candies, " + " lollipops, " + "Income: " + str(self.income) + ", Sugar: " + str(self.sugar_amount) + "gr"
 
 
 
@@ -61,7 +62,7 @@ candy_shop.create_sweets("candy")
 candy_shop.create_sweets("candy")
 candy_shop.create_sweets("lollipop")
 candy_shop.create_sweets("lollipop")
-print(candy_shop)
+print(candy_shop    )
 # Should print out:
 # Invetory: 2 candies, 2 lollipops, Income: 0, Sugar: 270gr
 candy_shop.sell("candy", 1)
@@ -77,4 +78,3 @@ candy_shop.buy_sugar(300)
 print(candy_shop)
 # Should print out:
 # "Invetory: 1 candies, 1 lollipops, Income:5, Sugar: 315gr"
-
